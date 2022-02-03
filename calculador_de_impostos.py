@@ -3,9 +3,7 @@ from impostos import ICMS, ICPP, IKCV, ISS
 
 class CalculadorDeImpostos(object):
     def realiza_calculo(self, orcamento, imposto):
-
         imposto_calculado = imposto.calcula(orcamento)
-
         print(imposto_calculado)
 
 
@@ -22,7 +20,11 @@ if __name__ == "__main__":
     print("ISS e ICMS")
     calculador.realiza_calculo(orcamento, ISS())
     calculador.realiza_calculo(orcamento, ICMS())
+    print("ISS_com_ICMS")
+    calculador.realiza_calculo(orcamento, ISS(ICMS()))
 
-    print("ICPP e IKVC")
+    print("\nICPP e IKVC")
     calculador.realiza_calculo(orcamento, ICPP())
     calculador.realiza_calculo(orcamento, IKCV())
+    print("ICPP_com_IKCV")
+    calculador.realiza_calculo(orcamento, ICPP(IKCV()))

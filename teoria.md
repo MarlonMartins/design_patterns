@@ -78,4 +78,25 @@ Se não tivesse a ajuda do Django e a inversão de controle, o desenvolvedor ser
 cabeçalhos HTTP, mapear uma URL para uma função, abrir e fechar a conexão e transação, fazer o tratamento de erro, 
 renderizar a resposta etc etc etc .... Tudo isso o Django prepara antes de chamar o código da aplicação. Falando um 
 pouco simplificado, o Django é o template, a grande mãe que prepara tudo para o nosso código ficar o mais simples 
-possível.ff
+possível.
+
+
+## Decorator
+### Quando devemos aplicar o padrão Decorator? 
+O Decorator introduz a flexibilidade na composição desses comportamentos, bastando escolher no momento da instanciação, 
+quais instancias serão utilizadas para realizar o trabalho.
+
+
+### Decorator ou Chain of Responsibility
+O Decorator é para compor e dividir comportamento em fatias onde cada fatia (objeto) representa uma parte da 
+responsabilidade. Os Decorators modificam/melhoram o comportamento original. A intenção do Chain of Responsabilidade não
+é dividir a responsabilidade em fatias menores e sim criar uma cadeia de decisão onde cada objeto representa uma 
+responsabilidade.
+
+Um exemplo clássico de um Decorator é a leitura de um arquivo. Imagine uma classe que saiba abrir um arquivo para ler 
+dados binários. Nem sempre queremos ler bits e bytes quando se trata de texto. Sendo assim, podemos criar uma classe que
+decora o comportamento para transformar 2 byte em um caracter, por exemplo. Ler um arquivo caracter por caracter,também 
+não é tão funcional, melhor seria linha por linha. Podemos criar mais um decorator que transforma os caracteres em 
+strings. Os decorators nesse exemplo melhoram o comportamento original (leitura) e dividem a responsabilidade.
+
+![img.png](img.png)
