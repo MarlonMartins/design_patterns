@@ -100,3 +100,9 @@ não é tão funcional, melhor seria linha por linha. Podemos criar mais um deco
 strings. Os decorators nesse exemplo melhoram o comportamento original (leitura) e dividem a responsabilidade.
 
 ![img.png](img.png)
+
+## State
+A principal situação que faz emergir o Design Pattern State é a necessidade de implementação de uma máquina de estados. 
+Geralmente, o controle das possíveis transições entre estados são várias, também são complexas, fazendo com que a 
+implementação não seja simples. O State auxilia a manter o controle dos estados simples e organizados, através da 
+criação de classes que representem cada estado e sabendo controlar as transições entre eles.
